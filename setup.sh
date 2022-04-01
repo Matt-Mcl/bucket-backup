@@ -1,21 +1,22 @@
 #!/bin/bash
 # set -x
 
-if [ -z "$5" ]; then
+if [ -z "$6" ]; then
     echo "Missing variables"
-    echo "Run script like so: ./setup.sh {BUCKET_NAMESPACE} {BUCKET_REGION} {BUCKET_NAME} {BUCKET_DIRECTORY} {BACKUP_FILE_PATH} '{CRON_SCHEDULE}'"
+    echo "Run script like so: ./setup.sh {BACKUP_SCRIPT_NAME} '{CRON_SCHEDULE}' {BUCKET_NAMESPACE} {BUCKET_REGION} {BUCKET_NAME} {BUCKET_DIRECTORY} {BACKUP_FILE_PATH}"
     exit
 fi
 
 username=$(whoami)
 directory="$(pwd)"
-script="$directory/backup.sh"
-bucket_namespace=$1
-bucket_region=$2
-bucket_name=$3
-bucket_dir=$4
-backup_file_path=$5
-cron_schedule=$6
+script="$directory/$1"
+cron_schedule=$2
+bucket_namespace=$3
+bucket_region=$4
+bucket_name=$5
+bucket_dir=$6
+backup_file_path=$7
+
 
 if [ ! -d venv ]; then
     echo "venv not present - creating" 
