@@ -1,6 +1,10 @@
 # Bucket Backup
 
-Simply run [setup.sh](setup.sh) like so:
+## Getting Started
+
+1. Configure OCI and S3 API credentials: SDK and CLI Configuration File.
+
+2. Simply run [setup.sh](setup.sh) like so:
 
 `./setup.sh {BACKUP_SCRIPT_NAME} '{CRON_SCHEDULE}' {BUCKET_NAMESPACE} {BUCKET_REGION} {BUCKET_NAME} {BUCKET_DIRECTORY} {BACKUP_FILE_PATH}"`
 
