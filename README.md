@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-1. Configure OCI and S3 API credentials: SDK and CLI Configuration File.
+1. Configure S3 API credentials in `~/.aws/credentials`.
 
 2. Simply run [setup.sh](setup.sh) like so:
 
