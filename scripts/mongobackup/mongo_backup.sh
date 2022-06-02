@@ -11,6 +11,9 @@ temp_folder="mongodump-$today"
 
 mongodump --out $temp_folder
 
+# Remove dev database
+sudo rm -rf "$temp_folder/django_workoutapp_dev/"
+
 tar rvf "$temp_folder.tar" $temp_folder > /dev/null
 
 source "$directory/venv/bin/activate"
