@@ -9,7 +9,7 @@ bucket_name=$4
 bucket_dir=$5
 temp_folder="mongodump-$today"
 
-mongodump --out $temp_folder
+mongodump --out $temp_folder --quiet
 
 # Remove dev database
 sudo rm -rf "$temp_folder/django_workoutapp_dev/"
