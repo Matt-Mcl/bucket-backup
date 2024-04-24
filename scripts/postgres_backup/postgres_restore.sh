@@ -1,5 +1,4 @@
 #!/bin/bash
-# set -x
 
 # Example restore command
 

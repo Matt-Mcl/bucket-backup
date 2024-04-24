@@ -1,5 +1,4 @@
 #!/bin/bash
-# set -x
 
 today=`date '+%Y%m%d'`;
 directory=$1
