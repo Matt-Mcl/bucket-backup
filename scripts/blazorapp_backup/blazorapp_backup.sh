@@ -6,10 +6,10 @@ bucket_namespace=$2
 bucket_region=$3
 bucket_name=$4
 bucket_dir=$5
-temp_file="pgdump-$today.gz"
+temp_file="blazorapp-$today.gz"
 
-# Compressed for storage. See https://www.postgresql.org/docs/8.1/backup.html
-sudo -u postgres pg_dumpall | gzip > $temp_file
+# Backup /home/ubuntu/blazorapp/data (directory)
+sudo tar -czf $temp_file -C /home/ubuntu/blazorapp/data .
 
 source "$directory/venv/bin/activate"
 
@@ -20,5 +20,5 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-sudo cp $temp_file /mnt/crucial/data/backups/pgdump.gz
+sudo cp $temp_file /mnt/crucial/data/backups/blazorapp.gz
 sudo rm $temp_file
